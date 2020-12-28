@@ -20,8 +20,8 @@ module.exports = {
 	watchPathIgnorePatterns: pathsToIgnore, // no ejectar tests cuando haya cambios en los directorios de pathToIgnore
 	testPathIgnorePatterns: pathsToIgnore, // no incluir los directorios de pathToIgnore al ejecutar los tests
 	collectCoverage: true,
-  coverageDirectory: "coverage",
+	coverageDirectory: "coverage",
 	collectCoverageFrom: ['src/**/*.ts','!src/*/*.spec.ts'],
-  coverageReporters: ["lcov"],
+	coverageReporters: ["lcov"],																																														// cSpell: disable-line
 
 }

@@ -4,7 +4,7 @@ module.exports = ( env, arg ) => {
 	return {
 		mode: 'development',
 		entry: {
-			'crypto-bot': './src/index.tsx'
+			'abb-test': './src/index.tsx'
 		},
 		output: {
 			filename: '[name].main.js'
