@@ -1,0 +1,13 @@
+
+.control-panel {
+	display: flex;
+	gap: 5%;
+
+	span {
+		flex: 1;
+		&.name {
+			flex: 2;
+			font-weight: bold;
+		}
+	}	
+}
