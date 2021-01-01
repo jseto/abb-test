@@ -5,13 +5,13 @@ export interface Control {
 	maxDev: number
 }
 
-export class Feature {
+export interface Feature {
 	name: string
 	controls: Control[]
 }
 
 
-export class Part {
+export interface Part {
 	name: string
 	features: Feature[]
 }

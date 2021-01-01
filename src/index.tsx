@@ -1,16 +1,24 @@
 import { h, render } from "preact";
-import { ControlPanel } from './part/view/control-panel';
-import { Control } from './part/part';
+import { Part } from './part/part';
+import { PartPanel } from './part/view/part-panel';
 
 export const TestPanel = () => {
-	const control: Control = {
-		dev: 1, maxDev: 1, tolerance:1, name: 'TestControl'
+	const part: Part = {
+		name: 'Backdoor',
+		features: [
+			{
+				name: 'Seam',
+				controls: [
+					{	name: 'TestControl', dev: 1, maxDev: 1, tolerance:1 }
+				]
+			}
+		]
 	}
-
+	
 	return (
 		<div>
 			<h1>Abb Test Panel</h1>
-			<ControlPanel control={ control } />
+			<PartPanel part={ part } />
 		</div>
 	)
 }
