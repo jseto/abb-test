@@ -1,7 +1,8 @@
 import { Observable } from '../libs/observable';
-import { Part } from '../part/part';
+import { Part } from '../part/model/part';
 
-type ReceivedPartCallback = ( part: Part )=>void
+export type ReceivedPartCallback = ( part: Part )=>void
+export type DataStreamFactory = () => DataStream
 
 export abstract class DataStream {
 	/**

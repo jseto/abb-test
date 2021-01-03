@@ -1,19 +1,20 @@
 import { h, render } from "preact";
-import { Part } from './part/part';
+import { useEffect, useState } from "preact/hooks";
+import { MockDataStream } from './data-stream/mock-data-stream';
+import { Part } from './part/model/part';
+import { PartController } from './part/controller/part-controller';
 import { PartPanel } from './part/view/part-panel';
 
+PartController.registerDataStream( ()=> new MockDataStream() )
+
 export const TestPanel = () => {
-	const part: Part = {
-		name: 'Backdoor',
-		features: [
-			{
-				name: 'Seam',
-				controls: [
-					{	name: 'TestControl', dev: 1, maxDev: 1, tolerance:1 }
-				]
-			}
-		]
-	}
+	const [ part, setPart ] = useState( new Part( 'Waiting for new part...' ) )
+
+	useEffect(()=>{
+		PartController.instance.onNewPart( part => {
+			setPart( part )
+		})
+	},[])
 	
 	return (
 		<div>

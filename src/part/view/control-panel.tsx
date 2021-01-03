@@ -1,6 +1,6 @@
 import "./control-panel.scss"
 import { h } from 'preact'
-import { Control } from '../part';
+import { Control } from '../model/part';
 const OkIcon = require( "@fortawesome/fontawesome-free/svgs/regular/check-circle.svg" );
 const NotOkIcon = require( "@fortawesome/fontawesome-free/svgs/regular/times-circle.svg");
 
@@ -17,7 +17,7 @@ export const ControlPanel = ( props: ControlPanelProps ) => {
 			<span>{ dev }</span>
 			<span>{ maxDev }</span>
 			<span>
-				{ maxDev > tolerance
+				{ maxDev < tolerance
 					? <OkIcon fill="green" width="1em"/>
 					: <NotOkIcon fill="red" width="1em"/> 
 				}

@@ -1,0 +1,33 @@
+[
+	{
+		"name": "Backdoor",
+		"features": [
+			{
+				"name": "Seam",
+				"controls": [
+					{ "name": "Length" },
+					{ "name": "x" },
+					{ "name": "y" },
+					{ "name": "z" }
+				]
+			},
+			{
+				"name": "Slot",
+				"controls": [
+					{ "name": "Diameter" },
+					{ "name": "x" },
+					{ "name": "y" },
+					{ "name": "z" },
+					{ "name": "x" },
+					{ "name": "y" },
+					{ "name": "z" },
+					{ "name": "Depth" },
+					{ "name": "x" },
+					{ "name": "y" },
+					{ "name": "z" }
+				]
+			}
+		]
+	}
+
+]
