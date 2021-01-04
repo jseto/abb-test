@@ -13,7 +13,7 @@ export const ControlPanel = ( props: ControlPanelProps ) => {
 
 	return (
 		<div className="control-panel">
-			<span className="name">{ name }</span>
+			<span>{ name }</span>
 			<span>{ dev.toFixed( 3 ) }</span>
 			<span>{ maxDev.toFixed( 3 ) }</span>
 			<span>

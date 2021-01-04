@@ -37,7 +37,7 @@ describe('Part Controller', ()=>{
 		it( 'should update total dev on part received', ()=>{
 			jest.advanceTimersToNextTimer( 2 )
 
-			expect( PartController.instance.processedParts ).toBe( 2 )
+			expect( PartController.instance.processedParts ).toBe( 3 )
 			expect( PartController.instance.part.features['Seam'].controls['Length'].maxDev ).toBe( 0.25 )
 		})
 

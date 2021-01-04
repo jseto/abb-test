@@ -5,7 +5,7 @@ import data from "./data.json";
 export class MockDataStream extends DataStream {
 	connect() {
 		this._intervalHdl = setInterval( 
-			()=>this._observable.notify( this.createRandomPart() ), 10 * 1000 
+			()=>this._observable.notify( this.createRandomPart() ), 2 * 1000 
 		)
 		this._observable.notify( this.createRandomPart() )
 	}

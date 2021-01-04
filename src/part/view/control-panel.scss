@@ -1,16 +1,13 @@
 
 .control-panel {
 	display: flex;
-	flex-wrap: wrap;
-	justify-content: flex-start;
+	flex-wrap: nowrap;
+	padding: 0.1em 0.5em;
 	
 	gap: 5%;
 
 	span {
-		flex: 1;
-		&.name {
-			flex: 2;
-			font-weight: bold;
-		}
+		white-space: nowrap;
+		min-width: 5em;
 	}	
 }

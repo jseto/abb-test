@@ -1,0 +1,29 @@
+.feature-panel {
+	margin: 0.5em;
+	background-color: lightgray;
+	padding-bottom: 0.5em;
+
+	h3 {
+		margin-top: 0;
+		padding: 0.5em;
+	}
+
+	.container {
+		.control-panel.header {
+			font-weight: bold;
+			margin-bottom: 0.5em;
+		}
+	}
+}
+
+.accept {
+	background-color: darkgreen;
+}
+
+.warning {
+	background-color: goldenrod;
+}
+
+.reject {
+	background-color: crimson;
+}

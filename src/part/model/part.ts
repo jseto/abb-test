@@ -1,5 +1,5 @@
 export enum Conformity {
-	accept, reject, warning
+	accept='accept', reject='reject', warning='warning'
 }
 
 
@@ -50,6 +50,10 @@ export class Feature extends Component {
 		return this.evaluateConformance( Object.values( this.controls ) )
 	}
 	controls: { [ name: string ]: Control } = {}
+
+	get controlsArray() {
+		return Object.values( this.controls )
+	}
 }
 
 
@@ -66,4 +70,8 @@ export class Part extends Component {
 	}
 	
 	features: { [ name: string ]: Feature } = {}
+	
+	get featuresArray() {
+		return Object.values( this.features )
+	}
 }

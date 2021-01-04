@@ -13,12 +13,14 @@ export const PartPanel = ( props: PartPanelProps ) => {
 
 	return (
 		<div className="part-panel">
-			<h2 className="header">{ name }</h2>
-			{
-				Object.values( features ).map( feature => (					
-					<FeaturePanel key={feature.name} feature={ feature } />
-				))
-			}
+			<h2 className={`header ${ props.part?.getConformance() }`}>{ name }</h2>
+			<div className="container">
+				{
+					Object.values( features ).map( feature => (					
+						<FeaturePanel key={feature.name} feature={ feature } />
+					))
+				}
+			</div>
 		</div>
 	)
 }
