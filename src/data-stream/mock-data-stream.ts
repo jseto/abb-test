@@ -7,6 +7,7 @@ export class MockDataStream extends DataStream {
 		this._intervalHdl = setInterval( 
 			()=>this._observable.notify( this.createRandomPart() ), 10 * 1000 
 		)
+		this._observable.notify( this.createRandomPart() )
 	}
 
 	disconnect() {

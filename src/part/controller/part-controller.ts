@@ -12,7 +12,6 @@ export class PartController {
 		this._datastream = datastreamFactory()
 		this._onNewPart = new Observable<Part>()
 		this._datastream.subscribe( part => this.newPartArrived( part ) )
-		this._datastream.connect()
 	}
 
 	static get instance() {
@@ -24,6 +23,10 @@ export class PartController {
 			this._datastreamFactory = datastreamFactory
 			this._instance = null
 		}
+	}
+
+	connectToDatastream() {
+		this._datastream.connect()
 	}
 
 	onNewPart( listener: ReceivedPartCallback ) {

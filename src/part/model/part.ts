@@ -54,9 +54,9 @@ export class Feature extends Component {
 
 
 export class Part extends Component {
-	constructor( name: string, features: Feature[] ) {
+	constructor( name: string, features?: Feature[] ) {
 		super( name )
-		features.forEach( feature => {
+		features?.forEach( feature => {
 			this.features[ feature.name ] = feature
 		})
 	}

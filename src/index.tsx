@@ -14,6 +14,7 @@ export const TestPanel = () => {
 		PartController.instance.onNewPart( part => {
 			setPart( part )
 		})
+		PartController.instance.connectToDatastream()
 	},[])
 	
 	return (

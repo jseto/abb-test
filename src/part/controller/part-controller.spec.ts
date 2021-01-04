@@ -18,7 +18,7 @@ describe('Part Controller', ()=>{
 			oldRandom = Math.random
 			jest.spyOn( Math, 'random' ).mockImplementation(()=>0.5 )
 			PartController.registerDataStream( ()=> new MockDataStream() )
-			PartController.instance
+			PartController.instance.connectToDatastream()
 		})
 
 		afterEach(()=>{

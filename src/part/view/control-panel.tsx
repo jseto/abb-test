@@ -14,8 +14,8 @@ export const ControlPanel = ( props: ControlPanelProps ) => {
 	return (
 		<div className="control-panel">
 			<span className="name">{ name }</span>
-			<span>{ dev }</span>
-			<span>{ maxDev }</span>
+			<span>{ dev.toFixed( 3 ) }</span>
+			<span>{ maxDev.toFixed( 3 ) }</span>
 			<span>
 				{ maxDev < tolerance
 					? <OkIcon fill="green" width="1em"/>
