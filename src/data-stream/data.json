@@ -12,6 +12,16 @@
 				]
 			},
 			{
+				"name": "Inner Seam",
+				"controls": [
+					{ "name": "Length" },
+					{ "name": "x" },
+					{ "name": "y" },
+					{ "name": "z" },
+					{ "name": "Diameter" }
+				]
+			},
+			{
 				"name": "Slot",
 				"controls": [
 					{ "name": "Diameter" },

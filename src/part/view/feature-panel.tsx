@@ -8,7 +8,7 @@ interface FeaturePanelProps {
 }
 
 export const FeaturePanel = ( props: FeaturePanelProps ) => {
-	const maxControlsPerGroup = 8
+	const maxControlsPerGroup = 6
 	const { name, controlsArray, getConformance } = props.feature
 	
 	let controls = controlsArray

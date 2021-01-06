@@ -14,17 +14,17 @@ The **DataStream** class states a contract on how concrete data streams should b
 
 ### Business Logic
 
-The business logic responsibility is managed by the **PartController** class, and it is in charge to keep the _unique source of truth_ and process the data. In this assignment, the only processing is the calculation of the total accumulated deviation of every control. Again, the _observer pattern_ is used to notify consumers (i.e. user interface) that the processing has finished and the part is ready to be consumed (i.e. shown to the user).
+The business logic responsibility is managed by the **PartController** class. This class keeps the _unique source of truth_ and process the data. In this app, the only processing is the calculation of the total accumulated deviation of every control. Again, the _observer pattern_ is used to notify consumers (i.e. user interface) when the processing has finished and the part is ready to be consumed (i.e. shown to the user).
 
-The **PartController** class has been designed as a _singleton_ to keep data immutable. It also provides a mechanism to register a factory for the data stream concrete implementation  (**MockDatastream** class). That means that the concrete implementation will be automatically injected in the **PartController** constructor at the first instantiation. This mechanism provides an elegant and easy to use way to decouple the data stream by dependency injection.
+The **PartController** class has been designed as a _singleton_ to keep data immutable. Additionally, it provides a mechanism to register a factory to instantiate the concrete implementation of the data stream (**MockDatastream** class). In this way, the concrete implementation will be automatically injected in the **PartController** constructor at the first instantiation. This mechanism provides an elegant and easy to use way to decouple the data stream through dependency injection.
 
 ### User Interface
 
 The technology chosen to implement the user interface is **Preact**. **Preact** is a homomorphic library to **React** but weighing only 3.5Kb compared to >100Kb of **React**. Being homomorphic means that the API interface is equivalent and the usage doesn't change from the original **React** way. The selection of the technology is again irrelevant as it can be easily replaced by any other technology or even vanilla JS as the business logic is fully decoupled.
 
-The main component is the **PartPanel** and the component state is driven by subscribing to the **PartController** _new part_ notification. The subscription is done in the `useEffect` hook. Every time a new part has been processed, the component state will be changed according to the new part received in the event.
+The main component is the **PartPanel**. The component state is driven by subscribing to the **PartController** _new part_ event. The subscription is done in the `useEffect` hook. Every time a new part is processed, the component state will change with the new part received in the event.
 
-The layout has been done using the CSS Flex specification. Although the implementation is responsive, it is not fully optimized, as empty spaces can appear in the main panel. A solution to this could be using a packing algorithm and the use of the CSS Grid elements. As a temporary solution, the _controls_ are shown in groups of 8 which, to an extent, allows the Flex elements to automate the packing of the 8 control panel groups.
+The layout has been done using the CSS Flex specification. Although the implementation is responsive, it is not fully optimized, as empty spaces can appear in the main panel. A solution to this could be using a packing algorithm and the use of the CSS Grid elements. As a temporary solution, the _controls_ are shown in groups of 6 which, to an extent, allows the Flex elements to automate the packing of the 6 control panel groups.
 
 Finally, the part conformity, is driven by a tolerance parameter received with the data stream and processed locally in every control. The metrology concepts and acceptance criteria have been chosen arbitrarily and do not reflect a real scenario as this is not the goal of the exercise.
 
